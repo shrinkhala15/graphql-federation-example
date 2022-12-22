@@ -12,6 +12,8 @@ const typeDefs = `#graphql
     description: String!
     "The product's main photo as a URL"
     photo: String!
+    "The product price"
+    price: Int
   }
   
 
