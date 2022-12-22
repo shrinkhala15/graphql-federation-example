@@ -1,0 +1,24 @@
+{
+  "basket": [
+    {
+      "basketId": "basket-1",
+      "totalCost": 20
+    },
+    {
+      "basketId": "basket-2",
+      "totalCost": 10
+    },
+    {
+      "basketId": "basket-3",
+      "totalCost": 35
+    },
+    {
+      "basketId": "basket-4",
+      "totalCost": 40
+    },
+    {
+      "basketId": "basket-5",
+      "totalCost": 50
+    }
+  ]
+}
