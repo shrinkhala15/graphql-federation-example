@@ -1,0 +1,21 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+type Product @key(fields: "id") {
+  id: ID!
+  "The name of the product"
+  name: String!
+  "A short description about the product"
+  description: String!
+  "The product's main photo as a URL"
+  photo: String!
+  "The product price"
+  price: Int
+}
+
+type Query {
+  "The full list of products presented by the Interplanetary Space Tourism department"
+  products: [Product!]!
+  "The details of a specific product"
+  product(id: ID!): Product
+}
