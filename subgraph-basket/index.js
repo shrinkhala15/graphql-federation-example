@@ -1,14 +1,17 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import resolvers from "./resolvers.js";
-import typeDefs from "./typeDefs.js";
 import BasketsAPI from "./datasources/BasketsApi.js";
-import { buildSubgraphSchema } from '@apollo/subgraph';
+import { buildSubgraphSchema } from "@apollo/subgraph";
+import gql from "graphql-tag";
+import { readFileSync } from "fs";
+
+const typeDefs = gql(readFileSync("./baskets.graphql", { encoding: "utf-8" }));
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
-  schema: buildSubgraphSchema({ typeDefs, resolvers })
+  schema: buildSubgraphSchema({ typeDefs, resolvers }),
 });
 
 // Passing an ApolloServer instance to the `startStandaloneServer` function:
@@ -35,4 +38,3 @@ try {
 } catch (err) {
   console.error(err);
 }
-

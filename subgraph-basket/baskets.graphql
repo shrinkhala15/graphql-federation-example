@@ -1,0 +1,15 @@
+extend schema @link(
+  url: "https://specs.apollo.dev/federation/v2.0"
+  import: ["@key", "@shareable"]
+)
+
+type basket {
+  basketId: ID!
+  totalCost: Float
+}
+
+type Query {
+  baskets: [basket!]!
+  basket(id: ID!): basket
+}
+
