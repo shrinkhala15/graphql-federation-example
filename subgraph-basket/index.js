@@ -3,12 +3,12 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import resolvers from "./resolvers.js";
 import typeDefs from "./typeDefs.js";
 import BasketsAPI from "./datasources/BasketsApi.js";
+import { buildSubgraphSchema } from '@apollo/subgraph';
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema: buildSubgraphSchema({ typeDefs, resolvers })
 });
 
 // Passing an ApolloServer instance to the `startStandaloneServer` function:
