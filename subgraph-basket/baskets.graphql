@@ -3,13 +3,23 @@ extend schema @link(
   import: ["@key", "@shareable"]
 )
 
-type basket {
+type Basket @key(fields: "basketId") {
   basketId: ID!
   totalCost: Float
+  lineItems: [LineItems]
+}
+
+type LineItems {
+  product: Product!
+  quantity: Int
+}
+
+type Product @key(fields: "id", resolvable: false){
+  id: ID!
 }
 
 type Query {
-  baskets: [basket!]!
-  basket(id: ID!): basket
+  baskets: [Basket!]!
+  basket(id: ID!): Basket
 }
 

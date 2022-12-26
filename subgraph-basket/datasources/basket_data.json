@@ -2,23 +2,65 @@
   "basket": [
     {
       "basketId": "basket-1",
-      "totalCost": 20
+      "totalCost": 20,
+      "lineitems": [
+        {
+          "id": "pro-1",
+          "quantity": 2
+        }
+      ]
     },
     {
       "basketId": "basket-2",
-      "totalCost": 10
+      "totalCost": 10,
+      "lineitems": [
+        {
+          "id": "pro-1",
+          "quantity": 1
+        }
+      ]
     },
     {
       "basketId": "basket-3",
-      "totalCost": 35
+      "totalCost": 35,
+      "lineitems": [
+        {
+          "id": "pro-2",
+          "quantity": 1
+        },
+        {
+          "id": "pro-3",
+          "quantity": 1
+        }
+      ]
     },
     {
       "basketId": "basket-4",
-      "totalCost": 40
+      "totalCost": 40,
+      "lineitems": [
+        {
+          "id": "pro-4",
+          "quantity": 1
+        },
+        {
+          "id": "pro-5",
+          "quantity": 1
+        }
+      ]
     },
     {
       "basketId": "basket-5",
-      "totalCost": 50
+      "totalCost": 50,
+      "lineitems": [
+        {
+          "id": "pro-5",
+          "quantity": 1
+        },
+        {
+          "id": "pro-2",
+          "quantity": 1
+        }
+      ]
     }
   ]
 }
