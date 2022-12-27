@@ -10,7 +10,7 @@ type Basket @key(fields: "basketId") {
 }
 
 type LineItems {
-  product: Product!
+  product: Product
   quantity: Int
 }
 
@@ -21,5 +21,18 @@ type Product @key(fields: "id", resolvable: false){
 type Query {
   baskets: [Basket!]!
   basket(id: ID!): Basket
+}
+
+type Mutation {
+  addProductToBasket(basketId: ID!, productId: ID!, quantity: Int!): addProductResponse! 
+}
+
+type addProductResponse {
+  "Similar to HTTP status code, represents the status of the mutation"
+  code: Int!
+  "Indicates whether the mutation was successful"
+  success: Boolean!
+  "Human-readable message for the UI"
+  message: String!
 }
 

@@ -19,5 +19,20 @@ const resolvers = {
       });
     },
   },
+  Mutation: {
+    addProductToBasket: async (_, args, { dataSources }) => {
+      const { basketId, productId, quantity } = args;
+      await dataSources.BasketsAPI.addProductToBasket(
+        basketId,
+        productId,
+        quantity
+      );
+      return {
+        code: 200,
+        success: true,
+        message: `Successfully added new product`,
+      };
+    },
+  },
 };
 export default resolvers;

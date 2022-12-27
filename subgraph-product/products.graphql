@@ -15,7 +15,22 @@ type Product @key(fields: "id") {
 
 type Query {
   "The full list of products presented by the Interplanetary Space Tourism department"
-  products: [Product!]!
+  products: [Product]!
   "The details of a specific product"
   product(id: ID!): Product
+}
+
+type Mutation {
+  createProduct(id:ID!, name: String!, description: String!, photo: String!, price: Int!): createProductResponse! 
+}
+
+type createProductResponse {
+  "Similar to HTTP status code, represents the status of the mutation"
+  code: Int!
+  "Indicates whether the mutation was successful"
+  success: Boolean!
+  "Human-readable message for the UI"
+  message: String!
+  "Newly created product after a successful mutation"
+  product: Product
 }
